@@ -1,0 +1,4 @@
+- name: PING
+  hosts: web #module=collections
+  - name: ping the server
+    ansible.builtin.ping:
