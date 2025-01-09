@@ -10,6 +10,6 @@
   hosts: local
   connection: local
   tasks:
-  - name: pay2 and task2
+  - name: pay2 and task1
     ansible.builtin.debug:
      mag: "Hello from pay2 and task1" 
