@@ -1,0 +1,11 @@
+- name: Variable
+  hosts: local
+  connection: local
+  vars:
+   COUSE: "Devops with AWS"
+   DURATION: 120days
+   TRAINER: Sanaulla
+  tasks:
+  - name: print the variable
+    ansible.builtin.debug:
+      msg: " Corse is {{ COUSE }} , Duration is {{ DURATION }}, trainer is {{ TRAINER }}"
