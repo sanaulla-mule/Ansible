@@ -2,14 +2,14 @@
   hosts: local
   connection: local
   tasks:
-   - name: pay1 and task1
-     ansible.builtin.debug:
-       mag: "Hello from pay1 and task1" 
+  - name: pay1 and task1
+    ansible.builtin.debug:
+      mag: "Hello from pay1 and task1" 
   
-  - name: pay2
-    hosts: local
-    connection: local
-    tasks:
-    - name: pay2 and task2
-      ansible.builtin.debug:
-        mag: "Hello from pay2 and task1" 
+- name: pay2
+  hosts: local
+  connection: local
+  tasks:
+  - name: pay2 and task2
+    ansible.builtin.debug:
+     mag: "Hello from pay2 and task1" 
