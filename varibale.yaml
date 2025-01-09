@@ -1,11 +1,17 @@
 - name: Variable
   hosts: local
   connection: local
-  vars:
-   COUSE: "Devops with AWS"
+  vars: # PLAY level Veriable ,global varable
+   COURSE: "Devops with AWS"
    DURATION: 120days
    TRAINER: Sanaulla
   tasks:
-  - name: print the variable
+  - name: print the variables
+    vars: # task level variable 
+    COURSE: "Ansible"
     ansible.builtin.debug:
-      msg: " Corse is {{ COUSE }} , Duration is {{ DURATION }}, trainer is {{ TRAINER }}"
+      msg: " Corse is {{ COURSE }} , Duration is {{ DURATION }}, trainer is {{ TRAINER }}"
+
+  - name: print the variables
+    ansible.builtin.debug:
+      msg: " Corse is {{ COURSE }} , Duration is {{ DURATION }}, trainer is {{ TRAINER }}"
