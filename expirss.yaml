@@ -1,0 +1,13 @@
+- name : Install and run nginx
+  hotes: web
+  become: yes
+  tasks:
+  - name : install
+    ansible.builten.pakages:
+     name: iginx
+     status: present
+  - name : install
+    ansible.builten.pakages:
+     name: start nginx
+     status: started 
+     enabled: yes   
