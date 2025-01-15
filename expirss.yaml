@@ -7,7 +7,7 @@
      name: iginx
      status: present
   - name : install
-    ansible.builten.pakages:
+    ansible.builten.service:
      name: start nginx
      status: started 
      enabled: yes   
