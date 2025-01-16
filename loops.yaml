@@ -1,4 +1,4 @@
-- name: useing loops
+- name: Install packages 
   hosts: web 
   become: yes
   tasks:
@@ -7,7 +7,7 @@
       name: "{{ item }}"
       state: Installed
     loop:
-    - nginx
+    - mysql
     - gcc
     - git
-    - mysql
+    - zip
