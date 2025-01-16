@@ -1,4 +1,4 @@
--name : installing packages 
+-name: installing packages 
  hosts: web
  become: yes
  tasks:
