@@ -11,3 +11,12 @@
       names: " Sanaulla, Heera, Rida, Raees "
     ansible.builtin.debug:
       msg: " Names are: {{ names | split(',') }}"
+
+  - name: converting map into list
+    vars:
+      person_info: 
+        Name: Sanaulla
+        Age: 35 
+        Address: kothakoya
+    ansible.builtin.debug:
+      msg: " person details: {{ person_info | dict2items }}"    
