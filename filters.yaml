@@ -10,4 +10,4 @@
     vars:
       names: " Sanaulla, Heera, Rida, Raees "
     ansible.builtin.debug:
-      msg: " Names are: {{ names | split (' , ')}}"
+      msg: " Names are: {{ names | split(',') }}"
