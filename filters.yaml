@@ -19,4 +19,16 @@
         Age: 35 
         Address: kothakoya
     ansible.builtin.debug:
-      msg: " person details: {{ person_info | dict2items }}"    
+      msg: " person details: {{ person_info | dict2items }}" 
+      
+  - name: print min and max
+    vars:
+      numbers: [1,45,6,888,543]
+    ansible.builtin.debug:
+      msg: " min is: {{ numbers | min }}, max is : {{numbers | max }} " 
+
+  - name: Valid ipaddress
+    vars:
+      numbers: "232.453.564.234"
+    ansible.builtin.debug:
+      msg: "{{ ip |ansible.builtin.ipaddr }} "        
