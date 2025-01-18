@@ -2,6 +2,6 @@
   hosts: local
   connection: local
   tasks:
-  - name: undifne variable 
+  - name: undefine variable 
     ansible.builtin.debug:
       msg: "Hello {{ person | default ('Sanaulla') }}"
