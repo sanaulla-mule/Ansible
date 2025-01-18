@@ -29,6 +29,6 @@
 
   - name: Valid ipaddress
     vars:
-      numbers: "232.453.564.234"
+      ip: "232.453.564.234"
     ansible.builtin.debug:
       msg: "{{ ip |ansible.builtin.ipaddr }} "        
