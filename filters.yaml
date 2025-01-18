@@ -5,3 +5,9 @@
   - name: undefine variable 
     ansible.builtin.debug:
       msg: "Helo {{ person | default (' Rida Tahani ')}}"
+  
+  - name: converting to string to list
+    vars:
+      names: " Sanaulla, Heera, Rida, Raees "
+    ansible.builtin.debug:
+      msg: " Names are: {{ names | split (' , ')}}"
