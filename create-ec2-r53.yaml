@@ -26,3 +26,4 @@
       image_id: "{{ ami_id }}"
       instance_type: "{{ instace_type }}"
     loop: "{{ instances }}" 
+    register: ec2_info
