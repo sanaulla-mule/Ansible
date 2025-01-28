@@ -5,6 +5,7 @@
    subnet_id: subnet-08dd9106311b1bca9
    sg_id: sg-0ba3a85d2ea9ec4c0
    ami_id: ami-09c813fb71547fc4f
+   zone: sanadevops.online
    instace_type:
    instances:
    - mysql
@@ -30,4 +31,23 @@
 
   - name: print ec2_info
     ansible.builtin.debug:
-     msg: "{{ ec2_info }}"
+      msg: "{{ ec2_info }}"
+
+  - name: print Private ip r53 adress
+    ansible.builtin.debug:
+      msg: "{{ item.instances [0].private_ip_address }}"
+    loop: "{{ ec2_info.results }}"
+
+
+  - name: rint Private ip r53 records
+    amazon.aws.route53:
+     state: present
+     zone: "{{ zone }}"
+     record: "{{ item.item}}.{{ zone }}"
+     type: A
+     ttl: 7200
+     value: "{{ item.instances [0].private_ip_address }}"
+     wait: true
+     overwrite: true
+    loop: "{{ ec2_info.results }}"
+       
